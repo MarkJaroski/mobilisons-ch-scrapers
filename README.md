@@ -85,3 +85,5 @@ We'll demonstrate the process for the venue "Konzerthaus Schüür" with the url 
       ```
 
 1. **Make a pull request**
+
+   Somebody will examine your new proposed venue within a few weeks, holidays notwithstanding. If the venue you are contributing is a mostly concert video we reserve the right to contribute it upstream to the concertcloud project.
