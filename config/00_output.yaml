@@ -10,9 +10,9 @@ writer:
   # user: croncert
   # password: croncert
   type: "api"
-  uri: "https://localhost:5000/api/events"
-  uri_dryrun: "https://localhost:5000/api/events/validate"
-  uri_status: "https://localhost:5000/api/status"
+  uri: "http://localhost:5000/api/events"
+  uri_dryrun: "http://localhost:5000/api/events/validate"
+  uri_status: "http://localhost:5000/api/status"
   write_status: true
   batch_size: 100
   # The other parameters are defined as env variables.
