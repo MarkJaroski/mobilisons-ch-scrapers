@@ -1,6 +1,6 @@
 scrapers:
   - name: LeReflet
-    url: https://www.lereflet.ch/saison-actuelle
+    url: https://www.lereflet.ch/programme
     item: article
     fields:
       - name: "location"
@@ -10,12 +10,11 @@ scrapers:
       - name: country
         value: Switzerland
       - name: "sourceUrl"
-        value: https://www.lereflet.ch/saison-actuelle
+        value: https://www.lereflet.ch/programme
       - name: title
         type: text
         location:
-          - selector: a
-            attr: title
+          - selector: h2.section-title > a
       - name: url
         type: url
         location:
@@ -24,7 +23,7 @@ scrapers:
       - name: type
         type: text
         location:
-          - selector: a > div.content-row.top > span
+          attr: data-categories
         transform:
           - type: regex-replace
             regex: ".*(T|t)héâtre.*"
@@ -41,13 +40,13 @@ scrapers:
       - name: imageUrl
         type: url
         location:
-          - selector: a > div.card-image > img
+          - selector: picture > img
             attr: src
       - name: comment
         type: text
         on_subpage: url
         location:
-          - selector: div.event-details-block > div.content-inner > div.single-row
+          - selector: div.content
             entire_subtree: true
       - name: date
         type: date
@@ -57,13 +56,16 @@ scrapers:
               day: true
               month: true
               year: true
+            location:
+              selector: date
+            layout:
+              - "Mon. 2 January 2006"
+          - covers:
               time: true
             location:
-              selector: div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div.event-info > div > div:nth-child(1) > ul > li
-              # - selector: div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > div.event-info > div > div:nth-child(1) > div.custom-dateofshow > p
+              selector: time
             layout:
-              - "Monday 2 January 2006 /\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t15h"
-              - "Monday 2 January 2006 /\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t15h04"
-        date_location: CET
+              - "15:04"
+        date_location: Europe/Zurich
         date_language: fr_FR
 
