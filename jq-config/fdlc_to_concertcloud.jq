@@ -1,8 +1,7 @@
-# Converts fdlc.json entries to ConcertCloud Event objects.
-# Each date in an entry becomes its own Event.
+# Source: https://2026.festivalcite.ch/fr/api/prog/
 #
 # Usage:
-#   jq -f fdlm_to_concertcloud.jq fdlm.json
+#   jq -f fdlc_to_concertcloud.jq fdlc.json
 
 [
   .[] |
