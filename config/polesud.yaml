@@ -112,5 +112,8 @@ scrapers:
         location:
           selector: div.wpem-event-infomation > div.wpem-event-details > div.wpem-event-date-time > span.wpem-event-date-time-text > div.wpem-event-date-time > span.wpem-event-date-time-text
         can_be_empty: true
-    render_js: true
+    fetcher:
+      type: dynamic
+      page_load_wait_ms: 1000
+
 
