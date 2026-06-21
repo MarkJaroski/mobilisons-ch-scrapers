@@ -2,7 +2,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/jakopako/croncert-config/good%20first%20issue.svg?label=good%20first%20issue&color=purple)](https://github.com/jakopako/croncert-config/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
-This repository contains the non-concert configuration for [mobilisons.ch](https://mobilisons.ch). mobilisons.ch is a website that helps you find events in Switzerland. Music-related events are imported from [concertcloud.live](https://concercloud.live) which is the parent project of this one. The data is gathered with [goskyr](https://github.com/jakopako/goskyr), a configurable command-line scraper written in go. Twice a week goskyr runs through a Github action using the configuration files in `config/` and updates the event database, which is then imported into mobilisons.ch.
+This repository contains the non-concert configuration for [mobilisons.ch](https://mobilisons.ch). mobilisons.ch is a website that helps you find events in Switzerland. Music-related events are imported from [concertcloud.live](https://concercloud.live) which is the [parent project](https://github.com/jakopako/croncert-config) of this one. The data is gathered with [goskyr](https://github.com/jakopako/goskyr), a configurable command-line scraper written in go. Twice a week goskyr runs through a Github action using the configuration files in `config/` and updates the event database, which is then imported into mobilisons.ch.
 
 ## Idea
 
