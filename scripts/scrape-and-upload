@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export PATH=${PATH}:/home/mark/go/bin
+
+export WRITER_USER=croncert 
+export WRITER_PASSWORD=LsMRSFes_N_LTELV2qm3X44q
+
+cd /home/mark/mobilisons-ch-scrapers
+goskyr scrape -c config
+
+/home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=153626 --concertcloudurl=http://localhost:5000/api/events --location "Pôle Sud"
+/home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=1085719 --concertcloudurl=http://localhost:5000/api/events --location "La Datcha"
