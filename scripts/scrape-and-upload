@@ -2,9 +2,6 @@
 
 export PATH=${PATH}:/home/mark/go/bin
 
-export WRITER_USER=croncert 
-export WRITER_PASSWORD=LsMRSFes_N_LTELV2qm3X44q
-
 cd /home/mark/mobilisons-ch-scrapers
 goskyr scrape -c config
 
