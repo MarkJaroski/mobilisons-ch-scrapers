@@ -10,3 +10,4 @@ goskyr scrape -c config
 
 /home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=153626 --concertcloudurl=http://localhost:5000/api/events --location "Pôle Sud"
 /home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=1085719 --concertcloudurl=http://localhost:5000/api/events --location "La Datcha"
+/home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=1086824 --concertcloudurl=http://localhost:5000/api/events --location "Le Reflet"
