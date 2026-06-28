@@ -10,7 +10,7 @@ scrapers:
       - name: country
         value: Switzerland
       - name: "location"
-        value: "Theatre du Passage"
+        value: "Théâtre du Passage"
       - name: "sourceUrl"
         value: "https://www.theatredupassage.ch"
       - name: title
