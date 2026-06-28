@@ -3,9 +3,9 @@
 export PATH=${PATH}:/home/mark/go/bin
 
 cd /home/mark/mobilisons-ch-scrapers
-goskyr scrape -c config
+#goskyr scrape -c config
 
-/home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=153626 --concertcloudurl=http://localhost:5000/api/events --location "Pôle Sud"
-/home/mark/go/bin/go-mobilizon-bot --city=Lausanne --actor=65691 --group=1085719 --concertcloudurl=http://localhost:5000/api/events --location "La Datcha"
-/home/mark/go/bin/go-mobilizon-bot --city=Vevey --actor=65691 --group=1086824 --concertcloudurl=http://localhost:5000/api/events --location "Le Reflet"
-/home/mark/go/bin/go-mobilizon-bot --city=Neuchâtel --actor=65691 --group=1065170 --concertcloudurl=http://localhost:5000/api/events --location "Theatre du Passage"
+/home/mark/go/bin/go-mobilizon-bot --config=venues/polesud --city=Lausanne --actor=65691 --group=153626 --concertcloudurl=http://localhost:5000/api/events --location "Pôle Sud"
+/home/mark/go/bin/go-mobilizon-bot --config=venues/datcha --city=Lausanne --actor=65691 --group=1085719 --concertcloudurl=http://localhost:5000/api/events --location "La Datcha"
+/home/mark/go/bin/go-mobilizon-bot --config=venues/reflet --city=Vevey --actor=65691 --group=1086824 --concertcloudurl=http://localhost:5000/api/events --location "Le Reflet"
+/home/mark/go/bin/go-mobilizon-bot --config=venues/passage --city=Neuchâtel --actor=65691 --group=1065170 --concertcloudurl=http://localhost:5000/api/events --location "Theatre du Passage"
