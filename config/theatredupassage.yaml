@@ -1,0 +1,113 @@
+scrapers:
+  - name: TheatreDuPassage
+    url: https://www.theatredupassage.ch/accueil/liste
+    item: div.evenements
+    fields:
+      - name: "type"
+        value: "concert"
+      - name: "city"
+        value: "Neuchâtel"
+      - name: country
+        value: Switzerland
+      - name: "location"
+        value: "Theatre du Passage"
+      - name: "sourceUrl"
+        value: "https://www.theatredupassage.ch"
+      - name: title
+        type: text
+        location:
+          - selector: h3
+      - name: type
+        type: text
+        location:
+          - selector: h4
+        transform:
+          - type: regex-replace
+            regex: ".*(T|t)héâtre.*"
+            replace: THEATRE
+          - type: regex-replace
+            regex: "Marionnettes.*"
+            replace: THEATRE
+          - type: regex-replace
+            regex: Visite
+            replace: COMMUNITY
+          - type: regex-replace
+            regex: Action culturelle
+            replace: COMMUNITY
+          - type: regex-replace
+            regex: Conférence
+            replace: MEETING
+          - type: regex-replace
+            regex: "Opéra.*"
+            replace: THEATRE
+          - type: regex-replace
+            regex: Humour
+            replace: COMEDY
+          - type: regex-replace
+            regex: Stand-up
+            replace: COMEDY
+          - type: regex-replace
+            regex: "Cirque.*"
+            replace: PERFORMING_VISUAL_ARTS
+          - type: regex-replace
+            regex: "Performance.*"
+            replace: PERFORMING_VISUAL_ARTS
+          - type: regex-replace
+            regex: "Improvisation.*"
+            replace: PERFORMING_VISUAL_ARTS
+          - type: regex-replace
+            regex: "Pluridisciplinaire.*"
+            replace: PERFORMING_VISUAL_ARTS
+          - type: regex-replace
+            regex: "Danse.*"
+            replace: PERFORMING_VISUAL_ARTS
+          - type: regex-replace
+            regex: "Dictée"
+            replace: FAMILY_EDUCATION
+          - type: regex-replace
+            regex: Karaoké
+            replace: MUSIQUE
+          - type: regex-replace
+            regex: Musique
+            replace: MUSIQUE
+      - name: url
+        type: url
+        location:
+          - selector: a
+            attr: href
+      - name: imageUrl
+        type: url
+        on_subpage: url
+        location:
+          - selector: div.media > img
+            attr: src
+      - name: comment
+        type: text
+        on_subpage: url
+        location:
+          - selector: div.description
+            entire_subtree: true
+        can_be_empty: true
+      - name: date
+        type: date
+        on_subpage: url
+        components:
+          - covers:
+              month: true
+              day: true
+              year: true
+              time: true
+            location:
+              selector: div.content-container h6
+              regex_extract:
+                exp: "[0-9]{1,2} [A-ZÉÛ]+ [0-9]{4} [0-9]{2}:[0-9]{2}"
+            transform:
+              - type: regex-replace
+                regex: FÉV
+                replace: Feb
+            layout: 
+              - "2 Jan 2006 15:04"
+              - "2 January 2006 15:04"
+        date_language: fr_FR
+    fetcher:
+      type: static
