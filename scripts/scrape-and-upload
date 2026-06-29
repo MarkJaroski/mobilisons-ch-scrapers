@@ -5,7 +5,7 @@ export PATH=${PATH}:${HOME}/go/bin
 cd ${HOME}/mobilisons-ch-scrapers
 #goskyr scrape -c config
 
-OPTS="--actor=65691 --concertcloudurl=http://localhost:5000/api/events"
+OPTS="--actor=65691 --concertcloudurl=http://localhost:5000/api/events --limit=500"
 
 go-mobilizon-bot ${OPTS} --config=${HOME}/venues/polesud --city=Lausanne --group=153626 --location "Pôle Sud"
 go-mobilizon-bot ${OPTS} --config=${HOME}/venues/datcha --city=Lausanne --group=1085719 --location "La Datcha"
