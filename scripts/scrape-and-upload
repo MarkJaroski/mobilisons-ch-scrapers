@@ -3,7 +3,7 @@
 export PATH=${PATH}:${HOME}/go/bin
 
 cd ${HOME}/mobilisons-ch-scrapers
-#goskyr scrape -c config
+goskyr scrape -c config
 
 OPTS="--actor=65691 --concertcloudurl=http://localhost:5000/api/events --limit=500"
 
