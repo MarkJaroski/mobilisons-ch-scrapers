@@ -7,7 +7,7 @@ cd ${HOME}/mobilisons-ch-scrapers
 
 OPTS="--actor=65691 --concertcloudurl=http://localhost:5000/api/events"
 
-go-mobilizon-bot ${OPTS} --config=venues/polesud --city=Lausanne --group=153626 --location "Pôle Sud"
-go-mobilizon-bot ${OPTS} --config=venues/datcha --city=Lausanne --group=1085719 --location "La Datcha"
-go-mobilizon-bot ${OPTS} --config=venues/reflet --city=Vevey --group=1086824 --location "Le Reflet"
-go-mobilizon-bot ${OPTS} --config=venues/passage --city=Neuchâtel --group=1065170 --location "Theatre du Passage"
+go-mobilizon-bot ${OPTS} --config=${HOME}/venues/polesud --city=Lausanne --group=153626 --location "Pôle Sud"
+go-mobilizon-bot ${OPTS} --config=${HOME}/venues/datcha --city=Lausanne --group=1085719 --location "La Datcha"
+go-mobilizon-bot ${OPTS} --config=${HOME}/venues/reflet --city=Vevey --group=1086824 --location "Le Reflet"
+go-mobilizon-bot ${OPTS} --config=${HOME}/venues/passage --city=Neuchâtel --group=1065170 --location "Theatre du Passage"
